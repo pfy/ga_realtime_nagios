@@ -6,7 +6,7 @@ Installation
 
 #### Requirements
 You need 
-[Google Analytics Realtime Beta API Access](https://docs.google.com/forms/d/1qfRFysCikpgCMGqgF3yXdUyQW4xAlLyjKuOoOEFN2Uw/viewform) and a valid client_secret.json file.
+[Google Analytics Realtime Beta API Access](https://docs.google.com/forms/d/1qfRFysCikpgCMGqgF3yXdUyQW4xAlLyjKuOoOEFN2Uw/viewform) and a valid client_secret.json file which you can get from the [google cloud console](https://cloud.google.com/console#/project).
 You need the view ID of a google anlytics realtime account.
 
 ##### Developer Machine
@@ -24,7 +24,7 @@ This should generate a file called: `analytics.dat`
 
 ##### Server Machine
 
-Copy `analytics.dat` to the server, to `/etc/nagios3/analytics.dat` and `chown nagios /etc/nagios3/analytics.dat`. The auth flow has to reset the token sometimes, so it needs write premission.
+Copy `analytics.dat` to the server, to `/etc/nagios3/analytics.dat` and `chown nagios /etc/nagios3/analytics.dat`. The auth flow has to reset the token sometimes, so it needs write permission.
 
 Install the required python modules
 
@@ -39,7 +39,7 @@ It should output something like:
 	REALTIMEVISITORS OK - activeVisitors is 266 | activeVisitors=266;;;0
 
 
-Copy `ga_realtime` to the nagios3 plugin directory. In Debian Based Systems, this is: `/usr/lib/nagios/plugins`
+Move `ga_realtime.py` to the nagios3 plugin directory. In Debian Based Systems, this is: `/usr/lib/nagios/plugins`
 
 Make an entry in the nagios3 commands file `/etc/nagios3/commands.cfg`
 
